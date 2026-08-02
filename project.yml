@@ -1,0 +1,48 @@
+name: ShowConnections
+options:
+  bundleIdPrefix: com.showconnections
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  ShowConnections:
+    type: application
+    platform: macOS
+    sources:
+      - path: ShowConnections
+        excludes:
+          - Resources/Info.plist
+      - path: ShowConnections/Resources
+        buildPhase: resources
+        excludes:
+          - Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.app
+        PRODUCT_NAME: ShowConnections
+        INFOPLIST_FILE: ShowConnections/Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: false
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        CODE_SIGN_IDENTITY: "-"
+        AD_HOC_CODE_SIGNING_ALLOWED: YES
+    scheme:
+      testTargets:
+        - ShowConnectionsTests
+  ShowConnectionsTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - ShowConnectionsTests
+    dependencies:
+      - target: ShowConnections
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.tests
+        GENERATE_INFOPLIST_FILE: true
+        CODE_SIGN_IDENTITY: "-"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ShowConnections.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShowConnections"
+        BUNDLE_LOADER: "$(TEST_HOST)"
