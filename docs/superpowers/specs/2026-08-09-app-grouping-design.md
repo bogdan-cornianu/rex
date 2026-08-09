@@ -57,7 +57,7 @@ struct AppGroup: Identifiable, Hashable, Sendable {
 2. Otherwise the key is `name:` + `processName`.
 3. Display name: for a bundle key, the last path component with the `.app` suffix removed; for a name key, `processName`.
 
-Connections that share a key belong to one `AppGroup`. Order of groups and of children within a group follows a stable, documented sort (e.g. groups by `displayName` ascending; children keep the table’s connection ordering / existing comparator).
+Connections that share a key belong to one `AppGroup`. Groups sort by `displayName` ascending (case-insensitive). Children within a group keep the same relative order as in the filtered connection list before grouping.
 
 ## UI
 
