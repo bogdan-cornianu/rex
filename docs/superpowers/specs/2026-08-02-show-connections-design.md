@@ -12,6 +12,7 @@ Users need a clear, always-current view of which processes hold live TCP/UDP con
 
 - Show all visible live network connections in a sortable, filterable table
 - Attribute each connection to a process (name, PID, path when readable)
+- Show approximate per-connection **Download / Upload (MB/s)** via private `com.apple.network.statistics` (nstat), merged onto libproc rows
 - Allow killing the owning process (SIGTERM, then optional SIGKILL) after an explicit confirm sheet
 - Stay responsive under roughly 1k rows with ~1s refresh
 
@@ -19,7 +20,7 @@ Users need a clear, always-current view of which processes hold live TCP/UDP con
 
 - Auto-flagging “weird” apps (unsigned, first-seen, etc.)
 - DNS reverse lookup of remote addresses
-- Byte counters / bandwidth
+- Cumulative lifetime byte totals (only instantaneous rates)
 - Firewall block or per-socket close
 - Menu bar presence
 - Root helper / Full Disk Access requirement
@@ -103,10 +104,11 @@ struct Connection: Identifiable, Hashable {
 Rex/                             # app sources
   Models/Connection.swift
   Services/ConnectionPoller.swift
+  Services/NetworkStatisticsClient.swift
   Services/ProcessKiller.swift
   Store/ConnectionStore.swift
   Views/…                        # main table + kill sheet
-RexTests/                        # unit tests (mapping, filters, ids)
+RexTests/                        # unit tests (mapping, filters, ids, rates)
 ```
 
 ## Testing

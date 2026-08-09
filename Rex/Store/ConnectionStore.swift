@@ -15,6 +15,7 @@ final class ConnectionStore {
     }
 
     private let poller = ConnectionPoller()
+    private let nstat = NetworkStatisticsClient()
     private var pollTask: Task<Void, Never>?
 
     func start() {
@@ -22,11 +23,18 @@ final class ConnectionStore {
         pollTask = Task { [weak self] in
             await self?.runPollLoop()
         }
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
+            let client = nstat
+            Task.detached(priority: .utility) {
+                client.start()
+            }
+        }
     }
 
     func stop() {
         pollTask?.cancel()
         pollTask = nil
+        nstat.stop()
     }
 
     func connectionCount(for pid: Int32) -> Int {
@@ -49,9 +57,17 @@ final class ConnectionStore {
             poller.snapshot()
         }.value
 
+        let rates = nstat.snapshotRates()
+
         switch result {
         case .success(let next):
-            connections = next
+            connections = next.map { connection in
+                guard let rate = rates[connection.id] else { return connection }
+                return connection.withRates(
+                    downloadBytesPerSecond: rate.downloadBytesPerSecond,
+                    uploadBytesPerSecond: rate.uploadBytesPerSecond
+                )
+            }
             pollError = nil
             lastUpdatedAt = .now
         case .failure(let error):

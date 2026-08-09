@@ -71,6 +71,20 @@ struct ContentView: View {
                         .monospaced()
                 }
                 .width(110)
+
+                TableColumn("Download (MB/s)") { (connection: Connection) in
+                    Text(formatRateMBPS(connection.downloadBytesPerSecond))
+                        .monospacedDigit()
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+                .width(min: 100, ideal: 120)
+
+                TableColumn("Upload (MB/s)") { (connection: Connection) in
+                    Text(formatRateMBPS(connection.uploadBytesPerSecond))
+                        .monospacedDigit()
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+                .width(min: 100, ideal: 120)
             }
             .contextMenu(forSelectionType: Connection.ID.self) { ids in
                 Button("Kill Process…") {

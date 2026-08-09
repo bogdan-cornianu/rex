@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1DCA8FD8390BE9BEF0AD7085 /* ConnectionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F375F8B002A421A5485639 /* ConnectionPoller.swift */; };
+		1EF7DF1F8AAD23C1B510E3A0 /* TrafficRateMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDE1AD8CE5762FB6B541991 /* TrafficRateMathTests.swift */; };
 		44BA99C79C0D618694D70DC0 /* ProcessKiller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD087182B05B04F54838E72 /* ProcessKiller.swift */; };
 		4798D18E06DD59AFDC303245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C54DF3414C81955A6F00BFE /* Assets.xcassets */; };
+		61585B17DAA8D2AA2A95C41F /* TrafficRateMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0BA73301D10D86AC2EE8DA /* TrafficRateMath.swift */; };
 		624E697E532F70D45925131B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627A143A5D288ACF05DF73C /* Connection.swift */; };
 		644BE12FB704152CA8C93E10 /* RexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7000236DBAC5AA6461E19 /* RexApp.swift */; };
+		64C5D233638CB731DBC5BF68 /* NetworkStatisticsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60514285F15DCCB24AA09DA2 /* NetworkStatisticsClient.swift */; };
 		94948BFA1990D5384F62D4C9 /* ConnectionFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */; };
 		99C18AC649F449A2248423C3 /* ConnectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A12F51517E9FA80343E41 /* ConnectionStore.swift */; };
 		AB4DABB708F17685A485ABA9 /* ConnectionPollerSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */; };
 		ABE1D2C6B9D0C0E37B21CA00 /* ConnectionFiltersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */; };
 		B29786063B8D58B0CA2B1833 /* KillConfirmSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */; };
 		BC32445F2BFE74B8FEADA100 /* RelativeUpdatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192D916149055228BE65303 /* RelativeUpdatedTests.swift */; };
+		E066872989F105F8AC865502 /* NstatControl.c in Sources */ = {isa = PBXBuildFile; fileRef = E450C8405ECC11B5CB6173F0 /* NstatControl.c */; };
 		EBD1E3FBD88AB3E310292DF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB840AE829196AF9A4D031A3 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,11 +37,15 @@
 
 /* Begin PBXFileReference section */
 		1627A143A5D288ACF05DF73C /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		1B7302E028D098D4DBA8386E /* NstatControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NstatControl.h; sourceTree = "<group>"; };
+		2A0BA73301D10D86AC2EE8DA /* TrafficRateMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficRateMath.swift; sourceTree = "<group>"; };
+		2BDE1AD8CE5762FB6B541991 /* TrafficRateMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficRateMathTests.swift; sourceTree = "<group>"; };
 		3192D916149055228BE65303 /* RelativeUpdatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeUpdatedTests.swift; sourceTree = "<group>"; };
 		467CC0BCC8C69EA68F9C17CB /* Rex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFiltersTests.swift; sourceTree = "<group>"; };
 		53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPollerSmokeTests.swift; sourceTree = "<group>"; };
 		5A2A12F51517E9FA80343E41 /* ConnectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStore.swift; sourceTree = "<group>"; };
+		60514285F15DCCB24AA09DA2 /* NetworkStatisticsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatisticsClient.swift; sourceTree = "<group>"; };
 		76BCD6235E68DE09D836130A /* RexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C7000236DBAC5AA6461E19 /* RexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexApp.swift; sourceTree = "<group>"; };
 		7C54DF3414C81955A6F00BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 		BBD087182B05B04F54838E72 /* ProcessKiller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessKiller.swift; sourceTree = "<group>"; };
 		C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFilters.swift; sourceTree = "<group>"; };
 		C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillConfirmSheet.swift; sourceTree = "<group>"; };
+		E450C8405ECC11B5CB6173F0 /* NstatControl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = NstatControl.c; sourceTree = "<group>"; };
 		FB840AE829196AF9A4D031A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +82,7 @@
 				4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */,
 				53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */,
 				3192D916149055228BE65303 /* RelativeUpdatedTests.swift */,
+				2BDE1AD8CE5762FB6B541991 /* TrafficRateMathTests.swift */,
 			);
 			path = RexTests;
 			sourceTree = "<group>";
@@ -112,7 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				B1F375F8B002A421A5485639 /* ConnectionPoller.swift */,
+				60514285F15DCCB24AA09DA2 /* NetworkStatisticsClient.swift */,
+				E450C8405ECC11B5CB6173F0 /* NstatControl.c */,
+				1B7302E028D098D4DBA8386E /* NstatControl.h */,
 				BBD087182B05B04F54838E72 /* ProcessKiller.swift */,
+				2A0BA73301D10D86AC2EE8DA /* TrafficRateMath.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 				ABE1D2C6B9D0C0E37B21CA00 /* ConnectionFiltersTests.swift in Sources */,
 				AB4DABB708F17685A485ABA9 /* ConnectionPollerSmokeTests.swift in Sources */,
 				BC32445F2BFE74B8FEADA100 /* RelativeUpdatedTests.swift in Sources */,
+				1EF7DF1F8AAD23C1B510E3A0 /* TrafficRateMathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +250,11 @@
 				99C18AC649F449A2248423C3 /* ConnectionStore.swift in Sources */,
 				EBD1E3FBD88AB3E310292DF6 /* ContentView.swift in Sources */,
 				B29786063B8D58B0CA2B1833 /* KillConfirmSheet.swift in Sources */,
+				64C5D233638CB731DBC5BF68 /* NetworkStatisticsClient.swift in Sources */,
+				E066872989F105F8AC865502 /* NstatControl.c in Sources */,
 				44BA99C79C0D618694D70DC0 /* ProcessKiller.swift in Sources */,
 				644BE12FB704152CA8C93E10 /* RexApp.swift in Sources */,
+				61585B17DAA8D2AA2A95C41F /* TrafficRateMath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +282,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rex.app;
 				PRODUCT_NAME = Rex;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rex/Rex-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -379,6 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rex.app;
 				PRODUCT_NAME = Rex;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rex/Rex-Bridging-Header.h";
 			};
 			name = Debug;
 		};

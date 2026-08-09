@@ -16,6 +16,7 @@ targets:
       - path: Rex
         excludes:
           - Resources/Info.plist
+          - Rex-Bridging-Header.h
       - path: Rex/Resources
         buildPhase: resources
         excludes:
@@ -26,6 +27,7 @@ targets:
         PRODUCT_NAME: Rex
         INFOPLIST_FILE: Rex/Resources/Info.plist
         GENERATE_INFOPLIST_FILE: false
+        SWIFT_OBJC_BRIDGING_HEADER: Rex/Rex-Bridging-Header.h
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
         CODE_SIGN_IDENTITY: "-"
         AD_HOC_CODE_SIGNING_ALLOWED: YES
