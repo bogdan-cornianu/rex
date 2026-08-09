@@ -20,6 +20,9 @@ open ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Debug/Rex.app
 - [ ] With many rows, typing in search stays responsive
 - [ ] **Download (MB/s)** / **Upload (MB/s)** columns appear; idle rows show `—` or `0.00`
 - [ ] Start a sizable download in a browser → that process’s ESTABLISHED row shows nonzero **Download (MB/s)** within ~2 seconds
+- [ ] Connections are grouped by app; groups start **collapsed** with name, count, and aggregate rates
+- [ ] Expand a group (e.g. browser) → child connection rows appear for that app
+- [ ] Kill on a parent group targets all distinct PIDs in the group; kill on a leaf targets that connection’s PID
 
 ## Unit tests
 

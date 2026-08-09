@@ -13,11 +13,11 @@ struct KillConfirmSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Kill Process")
+            Text(target.pids.count == 1 ? "Kill Process" : "Kill Processes")
                 .font(.title2.bold())
 
             LabeledContent("Process", value: target.processName)
-            LabeledContent("PID", value: String(target.pid))
+            LabeledContent(target.pids.count == 1 ? "PID" : "PIDs", value: target.pidLabel)
             LabeledContent("Listed connections", value: String(target.connectionCount))
 
             Text(statusMessage)
@@ -56,15 +56,17 @@ struct KillConfirmSheet: View {
         defer { isWorking = false }
 
         do {
-            try killer.terminate(pid: target.pid)
+            for pid in target.pids {
+                try killer.terminate(pid: pid)
+            }
             didAttemptTerminate = true
-            statusMessage = "Sent SIGTERM. Checking whether the process exited…"
+            statusMessage = "Sent SIGTERM. Checking whether the process\(target.pids.count == 1 ? "" : "es") exited…"
             try? await Task.sleep(for: .seconds(2))
-            stillAliveAfterTerminate = killer.isAlive(pid: target.pid)
+            stillAliveAfterTerminate = target.pids.contains { killer.isAlive(pid: $0) }
             if stillAliveAfterTerminate {
-                statusMessage = "Process still running. Use Force Quit to send SIGKILL."
+                statusMessage = "Process\(target.pids.count == 1 ? "" : "es") still running. Use Force Quit to send SIGKILL."
             } else {
-                statusMessage = "Process exited."
+                statusMessage = "Process\(target.pids.count == 1 ? "" : "es") exited."
                 try? await Task.sleep(for: .milliseconds(400))
                 onFinished()
             }
@@ -82,7 +84,9 @@ struct KillConfirmSheet: View {
         defer { isWorking = false }
 
         do {
-            try killer.forceQuit(pid: target.pid)
+            for pid in target.pids {
+                try killer.forceQuit(pid: pid)
+            }
             statusMessage = "Sent SIGKILL."
             try? await Task.sleep(for: .milliseconds(400))
             onFinished()

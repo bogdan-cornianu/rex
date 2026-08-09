@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A3640E17A4474E5648E0F9 /* AppGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061E6F211D5464D17D5FE5F /* AppGrouping.swift */; };
 		1DCA8FD8390BE9BEF0AD7085 /* ConnectionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F375F8B002A421A5485639 /* ConnectionPoller.swift */; };
 		1EF7DF1F8AAD23C1B510E3A0 /* TrafficRateMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDE1AD8CE5762FB6B541991 /* TrafficRateMathTests.swift */; };
 		44BA99C79C0D618694D70DC0 /* ProcessKiller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD087182B05B04F54838E72 /* ProcessKiller.swift */; };
 		4798D18E06DD59AFDC303245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C54DF3414C81955A6F00BFE /* Assets.xcassets */; };
+		55B4E410F698B6EBC7356E88 /* AppGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92D3A018D899D93079E46A1 /* AppGroupingTests.swift */; };
 		61585B17DAA8D2AA2A95C41F /* TrafficRateMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0BA73301D10D86AC2EE8DA /* TrafficRateMath.swift */; };
 		624E697E532F70D45925131B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627A143A5D288ACF05DF73C /* Connection.swift */; };
 		644BE12FB704152CA8C93E10 /* RexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7000236DBAC5AA6461E19 /* RexApp.swift */; };
@@ -53,7 +55,9 @@
 		BBD087182B05B04F54838E72 /* ProcessKiller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessKiller.swift; sourceTree = "<group>"; };
 		C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFilters.swift; sourceTree = "<group>"; };
 		C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillConfirmSheet.swift; sourceTree = "<group>"; };
+		D061E6F211D5464D17D5FE5F /* AppGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGrouping.swift; sourceTree = "<group>"; };
 		E450C8405ECC11B5CB6173F0 /* NstatControl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = NstatControl.c; sourceTree = "<group>"; };
+		E92D3A018D899D93079E46A1 /* AppGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupingTests.swift; sourceTree = "<group>"; };
 		FB840AE829196AF9A4D031A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +65,7 @@
 		168DFEE089589744A1172A02 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D061E6F211D5464D17D5FE5F /* AppGrouping.swift */,
 				1627A143A5D288ACF05DF73C /* Connection.swift */,
 				C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */,
 			);
@@ -79,6 +84,7 @@
 		7EB65323B1EAD7629B24C088 /* RexTests */ = {
 			isa = PBXGroup;
 			children = (
+				E92D3A018D899D93079E46A1 /* AppGroupingTests.swift */,
 				4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */,
 				53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */,
 				3192D916149055228BE65303 /* RelativeUpdatedTests.swift */,
@@ -233,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B4E410F698B6EBC7356E88 /* AppGroupingTests.swift in Sources */,
 				ABE1D2C6B9D0C0E37B21CA00 /* ConnectionFiltersTests.swift in Sources */,
 				AB4DABB708F17685A485ABA9 /* ConnectionPollerSmokeTests.swift in Sources */,
 				BC32445F2BFE74B8FEADA100 /* RelativeUpdatedTests.swift in Sources */,
@@ -244,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A3640E17A4474E5648E0F9 /* AppGrouping.swift in Sources */,
 				624E697E532F70D45925131B /* Connection.swift in Sources */,
 				94948BFA1990D5384F62D4C9 /* ConnectionFilters.swift in Sources */,
 				1DCA8FD8390BE9BEF0AD7085 /* ConnectionPoller.swift in Sources */,

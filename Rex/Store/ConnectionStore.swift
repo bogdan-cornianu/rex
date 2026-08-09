@@ -14,6 +14,10 @@ final class ConnectionStore {
         filters.filtered(connections)
     }
 
+    var groupedDisplayed: [AppGroup] {
+        AppGrouping.buildGroups(from: displayed)
+    }
+
     private let poller = ConnectionPoller()
     private let nstat = NetworkStatisticsClient()
     private var pollTask: Task<Void, Never>?
