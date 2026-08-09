@@ -1,4 +1,4 @@
-# Show Connections Implementation Plan
+# Rex Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -20,8 +20,8 @@
 
 ```
 project.yml
-ShowConnections/
-  ShowConnectionsApp.swift
+Rex/
+  RexApp.swift
   Models/Connection.swift
   Models/ConnectionFilters.swift
   Services/ConnectionPoller.swift
@@ -31,7 +31,7 @@ ShowConnections/
   Views/KillConfirmSheet.swift
   Resources/Assets.xcassets
   Resources/Info.plist
-ShowConnectionsTests/
+RexTests/
   ConnectionFiltersTests.swift
   ConnectionIDTests.swift
 docs/superpowers/specs/2026-08-02-show-connections-design.md
@@ -44,22 +44,22 @@ docs/manual-smoke-checklist.md
 
 **Files:**
 - Create: `project.yml`
-- Create: `ShowConnections/ShowConnectionsApp.swift`
-- Create: `ShowConnections/Resources/Info.plist`
-- Create: `ShowConnections/Resources/Assets.xcassets/Contents.json`
-- Create: `ShowConnections/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json`
-- Create: `ShowConnections/Views/ContentView.swift` (placeholder)
-- Create: `ShowConnectionsTests/ConnectionFiltersTests.swift` (empty suite shell)
+- Create: `Rex/RexApp.swift`
+- Create: `Rex/Resources/Info.plist`
+- Create: `Rex/Resources/Assets.xcassets/Contents.json`
+- Create: `Rex/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json`
+- Create: `Rex/Views/ContentView.swift` (placeholder)
+- Create: `RexTests/ConnectionFiltersTests.swift` (empty suite shell)
 
 **Interfaces:**
-- Produces: Xcode project `ShowConnections.xcodeproj` with app + test targets
+- Produces: Xcode project `Rex.xcodeproj` with app + test targets
 
 - [ ] **Step 1: Write `project.yml`**
 
 ```yaml
-name: ShowConnections
+name: Rex
 options:
-  bundleIdPrefix: com.showconnections
+  bundleIdPrefix: com.rex
   deploymentTarget:
     macOS: "14.0"
   createIntermediateGroups: true
@@ -68,45 +68,45 @@ settings:
     SWIFT_VERSION: "6.0"
     MACOSX_DEPLOYMENT_TARGET: "14.0"
 targets:
-  ShowConnections:
+  Rex:
     type: application
     platform: macOS
     sources:
-      - path: ShowConnections
+      - path: Rex
         excludes:
           - Resources/**
-      - path: ShowConnections/Resources
+      - path: Rex/Resources
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.app
-        PRODUCT_NAME: ShowConnections
-        INFOPLIST_FILE: ShowConnections/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.rex.app
+        PRODUCT_NAME: Rex
+        INFOPLIST_FILE: Rex/Resources/Info.plist
         GENERATE_INFOPLIST_FILE: false
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
         CODE_SIGN_IDENTITY: "-"
         AD_HOC_CODE_SIGNING_ALLOWED: YES
     scheme:
       testTargets:
-        - ShowConnectionsTests
-  ShowConnectionsTests:
+        - RexTests
+  RexTests:
     type: bundle.unit-test
     platform: macOS
     sources:
-      - ShowConnectionsTests
+      - RexTests
     dependencies:
-      - target: ShowConnections
+      - target: Rex
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.rex.tests
         GENERATE_INFOPLIST_FILE: true
         CODE_SIGN_IDENTITY: "-"
 ```
 
 - [ ] **Step 2: Write minimal app entry + placeholder UI + Info.plist + assets Contents.json**
 
-`ShowConnectionsApp.swift` — `@main` `App` with `WindowGroup { ContentView() }`.  
-`ContentView.swift` — `Text("Show Connections")`.  
+`RexApp.swift` — `@main` `App` with `WindowGroup { ContentView() }`.  
+`ContentView.swift` — `Text("Rex")`.  
 Info.plist — `CFBundleName`, `CFBundleIdentifier` via build settings, `LSMinimumSystemVersion` 14.0, `NSPrincipalClass` = `NSApplication`, scene manifest for SwiftUI.
 
 - [ ] **Step 3: Generate project and build**
@@ -115,7 +115,7 @@ Info.plist — `CFBundleName`, `CFBundleIdentifier` via build settings, `LSMinim
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 cd /Users/bogdancornianu/Projects/show-connections/Untitled
 xcodegen generate
-xcodebuild -scheme ShowConnections -project ShowConnections.xcodeproj -destination 'platform=macOS' build
+xcodebuild -scheme Rex -project Rex.xcodeproj -destination 'platform=macOS' build
 ```
 
 Expected: `BUILD SUCCEEDED`
@@ -123,8 +123,8 @@ Expected: `BUILD SUCCEEDED`
 - [ ] **Step 4: Commit**
 
 ```bash
-git add project.yml ShowConnections ShowConnectionsTests ShowConnections.xcodeproj
-git commit -m "Scaffold Show Connections macOS app with XcodeGen"
+git add project.yml Rex RexTests Rex.xcodeproj
+git commit -m "Scaffold Rex macOS app with XcodeGen"
 ```
 
 ---
@@ -132,10 +132,10 @@ git commit -m "Scaffold Show Connections macOS app with XcodeGen"
 ### Task 2: Connection model + filter logic (TDD)
 
 **Files:**
-- Create: `ShowConnections/Models/Connection.swift`
-- Create: `ShowConnections/Models/ConnectionFilters.swift`
-- Create: `ShowConnectionsTests/ConnectionFiltersTests.swift`
-- Create: `ShowConnectionsTests/ConnectionIDTests.swift`
+- Create: `Rex/Models/Connection.swift`
+- Create: `Rex/Models/ConnectionFilters.swift`
+- Create: `RexTests/ConnectionFiltersTests.swift`
+- Create: `RexTests/ConnectionIDTests.swift`
 
 **Interfaces:**
 - Produces:
@@ -161,7 +161,7 @@ func testMakeIDStableAndDistinct() { ... }
 
 ```bash
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-xcodebuild test -scheme ShowConnections -project ShowConnections.xcodeproj -destination 'platform=macOS'
+xcodebuild test -scheme Rex -project Rex.xcodeproj -destination 'platform=macOS'
 ```
 
 - [ ] **Step 3: Implement `Connection` + `ConnectionFilters`**
@@ -183,7 +183,7 @@ git commit -m "Add Connection model and filter logic with tests"
 ### Task 3: ConnectionPoller (libproc)
 
 **Files:**
-- Create: `ShowConnections/Services/ConnectionPoller.swift`
+- Create: `Rex/Services/ConnectionPoller.swift`
 
 **Interfaces:**
 - Consumes: `Connection`, `Proto`, `AddressFamily`
@@ -210,8 +210,8 @@ git commit -m "Add libproc ConnectionPoller for live socket snapshots"
 ### Task 4: ProcessKiller + ConnectionStore
 
 **Files:**
-- Create: `ShowConnections/Services/ProcessKiller.swift`
-- Create: `ShowConnections/Store/ConnectionStore.swift`
+- Create: `Rex/Services/ProcessKiller.swift`
+- Create: `Rex/Store/ConnectionStore.swift`
 
 **Interfaces:**
 - Produces:
@@ -245,9 +245,9 @@ git commit -m "Add ProcessKiller and ConnectionStore polling loop"
 ### Task 5: SwiftUI table + kill confirm sheet
 
 **Files:**
-- Modify: `ShowConnections/Views/ContentView.swift`
-- Create: `ShowConnections/Views/KillConfirmSheet.swift`
-- Modify: `ShowConnections/ShowConnectionsApp.swift` (inject store)
+- Modify: `Rex/Views/ContentView.swift`
+- Create: `Rex/Views/KillConfirmSheet.swift`
+- Modify: `Rex/RexApp.swift` (inject store)
 
 **Interfaces:**
 - Consumes: `ConnectionStore`, `ProcessKiller`

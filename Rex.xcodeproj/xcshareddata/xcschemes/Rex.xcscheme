@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3A09F998DAD0E83ECB1079F"
-               BuildableName = "ShowConnections.app"
-               BlueprintName = "ShowConnections"
-               ReferencedContainer = "container:ShowConnections.xcodeproj">
+               BlueprintIdentifier = "3F291F33BED538C8606D9262"
+               BuildableName = "Rex.app"
+               BlueprintName = "Rex"
+               ReferencedContainer = "container:Rex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3A09F998DAD0E83ECB1079F"
-            BuildableName = "ShowConnections.app"
-            BlueprintName = "ShowConnections"
-            ReferencedContainer = "container:ShowConnections.xcodeproj">
+            BlueprintIdentifier = "3F291F33BED538C8606D9262"
+            BuildableName = "Rex.app"
+            BlueprintName = "Rex"
+            ReferencedContainer = "container:Rex.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -44,10 +44,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC903CFF4C605A110C726B84"
-               BuildableName = "ShowConnectionsTests.xctest"
-               BlueprintName = "ShowConnectionsTests"
-               ReferencedContainer = "container:ShowConnections.xcodeproj">
+               BlueprintIdentifier = "9364DCE7217F8570954396BA"
+               BuildableName = "RexTests.xctest"
+               BlueprintName = "RexTests"
+               ReferencedContainer = "container:Rex.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,10 +68,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3A09F998DAD0E83ECB1079F"
-            BuildableName = "ShowConnections.app"
-            BlueprintName = "ShowConnections"
-            ReferencedContainer = "container:ShowConnections.xcodeproj">
+            BlueprintIdentifier = "3F291F33BED538C8606D9262"
+            BuildableName = "Rex.app"
+            BlueprintName = "Rex"
+            ReferencedContainer = "container:Rex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -87,10 +87,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3A09F998DAD0E83ECB1079F"
-            BuildableName = "ShowConnections.app"
-            BlueprintName = "ShowConnections"
-            ReferencedContainer = "container:ShowConnections.xcodeproj">
+            BlueprintIdentifier = "3F291F33BED538C8606D9262"
+            BuildableName = "Rex.app"
+            BlueprintName = "Rex"
+            ReferencedContainer = "container:Rex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>

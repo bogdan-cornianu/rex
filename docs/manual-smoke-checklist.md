@@ -1,11 +1,11 @@
-# Manual Smoke Checklist — Show Connections
+# Manual Smoke Checklist — Rex
 
-Run the app from Xcode (`ShowConnections` scheme) or:
+Run the app from Xcode (`Rex` scheme) or:
 
 ```bash
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-xcodebuild -scheme ShowConnections -project ShowConnections.xcodeproj -destination 'platform=macOS' build
-open ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Debug/ShowConnections.app
+xcodebuild -scheme Rex -project Rex.xcodeproj -destination 'platform=macOS' build
+open ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Debug/Rex.app
 ```
 
 ## Checks
@@ -23,5 +23,5 @@ open ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Debug/ShowConnection
 
 ```bash
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-xcodebuild test -scheme ShowConnections -project ShowConnections.xcodeproj -destination 'platform=macOS'
+xcodebuild test -scheme Rex -project Rex.xcodeproj -destination 'platform=macOS'
 ```

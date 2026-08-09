@@ -1,5 +1,5 @@
 import XCTest
-@testable import ShowConnections
+@testable import Rex
 
 final class ConnectionPollerSmokeTests: XCTestCase {
     func testSnapshotSucceeds() {

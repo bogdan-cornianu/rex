@@ -1,11 +1,11 @@
 import SwiftUI
 
 @main
-struct ShowConnectionsApp: App {
+struct RexApp: App {
     @State private var store = ConnectionStore()
 
     var body: some Scene {
-        WindowGroup("Show Connections") {
+        WindowGroup("Rex") {
             ContentView(store: store)
                 .frame(minWidth: 900, minHeight: 520)
         }

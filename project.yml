@@ -1,6 +1,6 @@
-name: ShowConnections
+name: Rex
 options:
-  bundleIdPrefix: com.showconnections
+  bundleIdPrefix: com.rex
   deploymentTarget:
     macOS: "14.0"
   createIntermediateGroups: true
@@ -9,40 +9,40 @@ settings:
     SWIFT_VERSION: "6.0"
     MACOSX_DEPLOYMENT_TARGET: "14.0"
 targets:
-  ShowConnections:
+  Rex:
     type: application
     platform: macOS
     sources:
-      - path: ShowConnections
+      - path: Rex
         excludes:
           - Resources/Info.plist
-      - path: ShowConnections/Resources
+      - path: Rex/Resources
         buildPhase: resources
         excludes:
           - Info.plist
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.app
-        PRODUCT_NAME: ShowConnections
-        INFOPLIST_FILE: ShowConnections/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.rex.app
+        PRODUCT_NAME: Rex
+        INFOPLIST_FILE: Rex/Resources/Info.plist
         GENERATE_INFOPLIST_FILE: false
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
         CODE_SIGN_IDENTITY: "-"
         AD_HOC_CODE_SIGNING_ALLOWED: YES
     scheme:
       testTargets:
-        - ShowConnectionsTests
-  ShowConnectionsTests:
+        - RexTests
+  RexTests:
     type: bundle.unit-test
     platform: macOS
     sources:
-      - ShowConnectionsTests
+      - RexTests
     dependencies:
-      - target: ShowConnections
+      - target: Rex
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.showconnections.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.rex.tests
         GENERATE_INFOPLIST_FILE: true
         CODE_SIGN_IDENTITY: "-"
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ShowConnections.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShowConnections"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Rex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rex"
         BUNDLE_LOADER: "$(TEST_HOST)"

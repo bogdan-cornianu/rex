@@ -1,4 +1,4 @@
-# Show Connections — Design Spec
+# Rex — Design Spec
 
 **Date:** 2026-08-02  
 **Status:** Approved  
@@ -100,13 +100,13 @@ struct Connection: Identifiable, Hashable {
 ## Project layout
 
 ```
-ShowConnections/                 # app sources
+Rex/                             # app sources
   Models/Connection.swift
   Services/ConnectionPoller.swift
   Services/ProcessKiller.swift
   Store/ConnectionStore.swift
   Views/…                        # main table + kill sheet
-ShowConnectionsTests/            # unit tests (mapping, filters, ids)
+RexTests/                        # unit tests (mapping, filters, ids)
 ```
 
 ## Testing

@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DCA8FD8390BE9BEF0AD7085 /* ConnectionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F375F8B002A421A5485639 /* ConnectionPoller.swift */; };
+		44BA99C79C0D618694D70DC0 /* ProcessKiller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD087182B05B04F54838E72 /* ProcessKiller.swift */; };
+		4798D18E06DD59AFDC303245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C54DF3414C81955A6F00BFE /* Assets.xcassets */; };
+		624E697E532F70D45925131B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627A143A5D288ACF05DF73C /* Connection.swift */; };
+		644BE12FB704152CA8C93E10 /* RexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7000236DBAC5AA6461E19 /* RexApp.swift */; };
+		94948BFA1990D5384F62D4C9 /* ConnectionFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */; };
+		99C18AC649F449A2248423C3 /* ConnectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A12F51517E9FA80343E41 /* ConnectionStore.swift */; };
+		AB4DABB708F17685A485ABA9 /* ConnectionPollerSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */; };
+		ABE1D2C6B9D0C0E37B21CA00 /* ConnectionFiltersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */; };
+		B29786063B8D58B0CA2B1833 /* KillConfirmSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */; };
+		BC32445F2BFE74B8FEADA100 /* RelativeUpdatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192D916149055228BE65303 /* RelativeUpdatedTests.swift */; };
+		EBD1E3FBD88AB3E310292DF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB840AE829196AF9A4D031A3 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F2679AEBD616DE9C098E601 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F56F64D5FCA3810837B7806 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F291F33BED538C8606D9262;
+			remoteInfo = Rex;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1627A143A5D288ACF05DF73C /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		3192D916149055228BE65303 /* RelativeUpdatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeUpdatedTests.swift; sourceTree = "<group>"; };
+		467CC0BCC8C69EA68F9C17CB /* Rex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFiltersTests.swift; sourceTree = "<group>"; };
+		53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPollerSmokeTests.swift; sourceTree = "<group>"; };
+		5A2A12F51517E9FA80343E41 /* ConnectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStore.swift; sourceTree = "<group>"; };
+		76BCD6235E68DE09D836130A /* RexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76C7000236DBAC5AA6461E19 /* RexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RexApp.swift; sourceTree = "<group>"; };
+		7C54DF3414C81955A6F00BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1F375F8B002A421A5485639 /* ConnectionPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPoller.swift; sourceTree = "<group>"; };
+		BBD087182B05B04F54838E72 /* ProcessKiller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessKiller.swift; sourceTree = "<group>"; };
+		C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFilters.swift; sourceTree = "<group>"; };
+		C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillConfirmSheet.swift; sourceTree = "<group>"; };
+		FB840AE829196AF9A4D031A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		168DFEE089589744A1172A02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1627A143A5D288ACF05DF73C /* Connection.swift */,
+				C3DA117F81AEB937BC5FECC5 /* ConnectionFilters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60FDCF6564CDB04FFEB478C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				467CC0BCC8C69EA68F9C17CB /* Rex.app */,
+				76BCD6235E68DE09D836130A /* RexTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EB65323B1EAD7629B24C088 /* RexTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C74A8937BB57B0CFC71A07C /* ConnectionFiltersTests.swift */,
+				53B422A7D0B0CFD3CDC7A879 /* ConnectionPollerSmokeTests.swift */,
+				3192D916149055228BE65303 /* RelativeUpdatedTests.swift */,
+			);
+			path = RexTests;
+			sourceTree = "<group>";
+		};
+		8CD3430C385350CD40705BAE = {
+			isa = PBXGroup;
+			children = (
+				B837F9158855E93324D4D4B2 /* Rex */,
+				7EB65323B1EAD7629B24C088 /* RexTests */,
+				60FDCF6564CDB04FFEB478C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B837F9158855E93324D4D4B2 /* Rex */ = {
+			isa = PBXGroup;
+			children = (
+				76C7000236DBAC5AA6461E19 /* RexApp.swift */,
+				168DFEE089589744A1172A02 /* Models */,
+				E627412F9072C120B4C10E00 /* Resources */,
+				C95FBF9BB6E8A187CE1457D9 /* Services */,
+				D0DAE3B47410D27B36337D7E /* Store */,
+				B9230FC9BCC93396060A22A2 /* Views */,
+			);
+			path = Rex;
+			sourceTree = "<group>";
+		};
+		B9230FC9BCC93396060A22A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB840AE829196AF9A4D031A3 /* ContentView.swift */,
+				C4F366ACEA3946545160E86D /* KillConfirmSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C95FBF9BB6E8A187CE1457D9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B1F375F8B002A421A5485639 /* ConnectionPoller.swift */,
+				BBD087182B05B04F54838E72 /* ProcessKiller.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D0DAE3B47410D27B36337D7E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				5A2A12F51517E9FA80343E41 /* ConnectionStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		E627412F9072C120B4C10E00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C54DF3414C81955A6F00BFE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F291F33BED538C8606D9262 /* Rex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64CAF39FC416E3A9B06F28DE /* Build configuration list for PBXNativeTarget "Rex" */;
+			buildPhases = (
+				CB9A0212F68669D92DAC7C7B /* Sources */,
+				9AE4936CBEB069B986570894 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rex;
+			packageProductDependencies = (
+			);
+			productName = Rex;
+			productReference = 467CC0BCC8C69EA68F9C17CB /* Rex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9364DCE7217F8570954396BA /* RexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E799F37111F1F121DDFF36C7 /* Build configuration list for PBXNativeTarget "RexTests" */;
+			buildPhases = (
+				AA6C33680547696226DF6FFA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C8ACEFCD0C493C60BE2C148 /* PBXTargetDependency */,
+			);
+			name = RexTests;
+			packageProductDependencies = (
+			);
+			productName = RexTests;
+			productReference = 76BCD6235E68DE09D836130A /* RexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F56F64D5FCA3810837B7806 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 4AE634A38FF301F3976092B4 /* Build configuration list for PBXProject "Rex" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8CD3430C385350CD40705BAE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 60FDCF6564CDB04FFEB478C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F291F33BED538C8606D9262 /* Rex */,
+				9364DCE7217F8570954396BA /* RexTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AE4936CBEB069B986570894 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4798D18E06DD59AFDC303245 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA6C33680547696226DF6FFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE1D2C6B9D0C0E37B21CA00 /* ConnectionFiltersTests.swift in Sources */,
+				AB4DABB708F17685A485ABA9 /* ConnectionPollerSmokeTests.swift in Sources */,
+				BC32445F2BFE74B8FEADA100 /* RelativeUpdatedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9A0212F68669D92DAC7C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				624E697E532F70D45925131B /* Connection.swift in Sources */,
+				94948BFA1990D5384F62D4C9 /* ConnectionFilters.swift in Sources */,
+				1DCA8FD8390BE9BEF0AD7085 /* ConnectionPoller.swift in Sources */,
+				99C18AC649F449A2248423C3 /* ConnectionStore.swift in Sources */,
+				EBD1E3FBD88AB3E310292DF6 /* ContentView.swift in Sources */,
+				B29786063B8D58B0CA2B1833 /* KillConfirmSheet.swift in Sources */,
+				44BA99C79C0D618694D70DC0 /* ProcessKiller.swift in Sources */,
+				644BE12FB704152CA8C93E10 /* RexApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C8ACEFCD0C493C60BE2C148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F291F33BED538C8606D9262 /* Rex */;
+			targetProxy = 4F2679AEBD616DE9C098E601 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26D48C87FE2022AB5E0A4AAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AD_HOC_CODE_SIGNING_ALLOWED = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Rex/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rex.app;
+				PRODUCT_NAME = Rex;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		34E5368AFB61DC2F08CB6100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rex.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rex";
+			};
+			name = Release;
+		};
+		5D6AC4CCC7B7F12167536DC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rex.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rex";
+			};
+			name = Debug;
+		};
+		91AECADD5696DE1B6CBE54C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		948BF4A908ED7F8016AB6F9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AD_HOC_CODE_SIGNING_ALLOWED = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Rex/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rex.app;
+				PRODUCT_NAME = Rex;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		995543404A7956C2285C1308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AE634A38FF301F3976092B4 /* Build configuration list for PBXProject "Rex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91AECADD5696DE1B6CBE54C2 /* Debug */,
+				995543404A7956C2285C1308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		64CAF39FC416E3A9B06F28DE /* Build configuration list for PBXNativeTarget "Rex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				948BF4A908ED7F8016AB6F9A /* Debug */,
+				26D48C87FE2022AB5E0A4AAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E799F37111F1F121DDFF36C7 /* Build configuration list for PBXNativeTarget "RexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6AC4CCC7B7F12167536DC0 /* Debug */,
+				34E5368AFB61DC2F08CB6100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F56F64D5FCA3810837B7806 /* Project object */;
+}
