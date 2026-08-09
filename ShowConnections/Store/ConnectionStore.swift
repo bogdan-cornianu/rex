@@ -6,7 +6,7 @@ import Observation
 final class ConnectionStore {
     private(set) var connections: [Connection] = []
     private(set) var pollError: String?
-    private(set) var isRefreshing: Bool = false
+    private(set) var lastUpdatedAt: Date?
 
     var filters = ConnectionFilters()
 
@@ -45,7 +45,6 @@ final class ConnectionStore {
     }
 
     private func refreshOnce() async {
-        isRefreshing = true
         let result = await Task.detached(priority: .utility) { [poller] in
             poller.snapshot()
         }.value
@@ -54,10 +53,9 @@ final class ConnectionStore {
         case .success(let next):
             connections = next
             pollError = nil
+            lastUpdatedAt = .now
         case .failure(let error):
             pollError = error.localizedDescription
         }
-
-        isRefreshing = false
     }
 }

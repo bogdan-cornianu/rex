@@ -91,14 +91,11 @@ struct ContentView: View {
                     )
                 }
             }
+
+            statusBar
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                if store.isRefreshing {
-                    ProgressView()
-                        .controlSize(.small)
-                }
-
                 TextField("Search name / IP / port", text: $store.filters.searchText)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 220)
@@ -145,6 +142,29 @@ struct ContentView: View {
         }
     }
 
+    private var statusBar: some View {
+        TimelineView(.periodic(from: .now, by: 1)) { context in
+            HStack(spacing: 0) {
+                Text(statusText(now: context.date))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .frame(maxWidth: .infinity)
+            .background(.bar)
+        }
+    }
+
+    private func statusText(now: Date) -> String {
+        let shown = store.displayed.count
+        let total = store.connections.count
+        let updated = relativeUpdated(lastUpdatedAt: store.lastUpdatedAt, now: now)
+        return "\(shown) shown · \(total) total · Updated \(updated)"
+    }
+
     private func presentKill(for ids: Set<Connection.ID>) {
         let selected = store.displayed.filter { ids.contains($0.id) }
         guard let first = selected.first else { return }
@@ -155,6 +175,18 @@ struct ContentView: View {
             connectionCount: store.connectionCount(for: pid)
         )
     }
+}
+
+func relativeUpdated(lastUpdatedAt: Date?, now: Date) -> String {
+    guard let lastUpdatedAt else { return "—" }
+    let seconds = max(0, Int(now.timeIntervalSince(lastUpdatedAt)))
+    if seconds < 2 {
+        return "just now"
+    }
+    if seconds < 60 {
+        return "\(seconds)s ago"
+    }
+    return lastUpdatedAt.formatted(date: .omitted, time: .shortened)
 }
 
 struct KillTarget: Identifiable, Hashable {
